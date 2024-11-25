@@ -11,49 +11,59 @@ rules = tk.Label(wind,
 rules.pack(pady=10)
 
 # Initialize computer's choice
-listt=['stone', 'paper', 'scissor']
+listt=['Stone', 'Paper', 'Scissor']
 #print(listt)
-comp_choice = random.choice(['stone', 'paper', 'scissor'])
+comp_choice = random.choice(['Stone', 'Paper', 'Scissor'])
 #print(comp_choice)
 
 def stone_press():
 
-    if comp_choice == 'scissor':
+    if comp_choice == 'Scissor':
         messagebox.showinfo(message="CONGRATULATIONS!!\n You Win the Game. :)")
         reload()
+    elif comp_choice == 'Stone':
+        messagebox.showinfo(message="Match has been Draw !! Computer also Chooses Stone.")
+        reload()
     else:
-        messagebox.showinfo(title="You Lose", message="Please Try Again!!\n Computer Choses {}".format(comp_choice))
+        messagebox.showerror(title="You Lose", message="You Loose !!\n Computer Chooses {}".format(comp_choice))
         reload()
 
 
 def paper_press():
 
-    if comp_choice == 'stone':
+    if comp_choice == 'Stone':
         messagebox.showinfo(message="CONGRATULATIONS!!\n You Win the Game. :)")
         reload()
+    elif comp_choice == 'Paper':
+        messagebox.showinfo(message="Match has been Draw !! Computer also Chooses Paper.")
+        reload()
+
     else:
-        messagebox.showinfo(title="You Lose", message="Please Try Again!!\n Computer Choses {}".format(comp_choice))
+        messagebox.showerror(title="You Lose", message="You Loose !!\n Computer Chooses {}".format(comp_choice))
         reload()
 
 
 def scissors_press():
 
-    if comp_choice == 'paper':
+    if comp_choice == 'Paper':
         messagebox.showinfo(message="CONGRATULATIONS!!\n You Win the Game. :)")
         reload()
+    elif comp_choice == 'Scissor':
+        messagebox.showinfo(message="Match has been Draw !! Computer also Chooses Scissor.")
+        reload()
     else:
-        messagebox.showinfo(title="You Lose", message="Please Try Again!!\n Computer Choses {}".format(comp_choice))
+        messagebox.showerror(title="You Lose", message="You Loose !!\n Computer Chooses {}".format(comp_choice))
         reload()
 
 
 def refresh():
     global comp_choice
-    comp_choice = random.choice(['stone', 'paper', 'scissor'])
+    comp_choice = random.choice(['Stone', 'Paper', 'Scissor'])
     messagebox.showinfo(message="Game Reset! Try Again.")
 
 def reload():
     global comp_choice
-    comp_choice = random.choice(['stone', 'paper', 'scissor'])
+    comp_choice = random.choice(['Stone', 'Paper', 'Scissor'])
 
 
 
@@ -63,9 +73,9 @@ button3 = tk.Button(wind, text="Scissors", command=scissors_press)
 button4 = tk.Button(wind, text="↻", command=refresh)
 
 
-button1.pack(pady=5)
-button2.pack(pady=5)
-button3.pack(pady=5)
-button4.pack(pady=20)
+button1.pack(pady=2)
+button2.pack(pady=2)
+button3.pack(pady=2)
+button4.pack(pady=30)
 
 wind.mainloop()
